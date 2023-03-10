@@ -1,9 +1,22 @@
 import React from 'react';
+import { useState } from 'react';
+import AddCard from './components/AddCard';
+import ContactList from './components/ContactList';
+
+import Header from './components/Header';
 
 const App = () => {
+    const [contacts, setContacts] = useState([]);
+
+    const addContactHandler = (contact) => {
+        setContacts([...contacts, contact]);
+    };
+
     return (
         <>
-            <h1 className="text-3xl">Hello</h1>
+            <Header />
+            <AddCard addContactHandler={addContactHandler} />
+            <ContactList contacts={contacts} />
         </>
     );
 };
