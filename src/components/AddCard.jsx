@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom';
 export default class AddCard extends Component {
     state = {
         name: '',
@@ -47,6 +47,9 @@ export default class AddCard extends Component {
 
                     <button className=" mx-6 bg-blue-600 px-6 py-2 rounded-lg text-white font-bold text-2xl cursor-pointer active:px-5 active:py-1 transition-all">Add Item</button>
                 </form>
+                <button className=" m-6 bg-blue-600 px-6 py-2 rounded-lg text-white font-bold text-2xl cursor-pointer active:px-5 active:py-1 transition-all">
+                    <Link to="/add/contact-list">Show the ListItem</Link>
+                </button>
             </>
         );
     }

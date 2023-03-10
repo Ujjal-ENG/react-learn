@@ -5,6 +5,8 @@ import AddCard from './components/AddCard';
 import ContactList from './components/ContactList';
 import Header from './components/Header';
 
+import { Routes, Route } from 'react-router-dom';
+
 import uuid from 'react-uuid';
 
 const App = () => {
@@ -31,9 +33,12 @@ const App = () => {
 
     return (
         <>
-            <Header />
-            <AddCard addContactHandler={addContactHandler} />
-            <ContactList contacts={contacts} removeItem={removeItem} />
+            <Routes>
+                <Route path="/" element={<Header />} />
+                <Route exact path="/add" element={<AddCard addContactHandler={addContactHandler} />} />
+
+                <Route exact path="/add/contact-list" element={<ContactList contacts={contacts} removeItem={removeItem} />} />
+            </Routes>
         </>
     );
 };
